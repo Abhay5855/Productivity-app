@@ -1,38 +1,50 @@
-
-
-
-import React from 'react';
-import './signup.css'
-import '../global/global.css'
+import {useState} from "react";
+import "./signup.css";
+import "../global/global.css";
 
 const Signup = () => {
-  return(
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-      <>
+  //  handling the form submission
 
-         <main className='signup__container'>
+  const handleSignup = (e) => {
+    e.preventDefault();
 
-             
-             <form>
+    const body = {
+      email: email,
+      password: password,
+    };
 
-               <input type='email' required placeholder='Enter Email here'/>
-               <input type='password' required placeholder='Enter Password'/>
+    console.log(body);
+  };
 
-               <button type='submit'>Signup</button>
-               
-             </form>
+  return (
+    <>
+      <main className="signup__container">
+        <form onSubmit={handleSignup} autoComplete="off">
+          <input
+            type="email"
+            required
+            placeholder="Enter Email here"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="on"
+          />
+          <input
+            type="password"
+            required
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
+          />
 
-
-
-
-
-
-
-
-
-         </main>
-      </>
-  )
+          <button type="submit">Signup</button>
+        </form>
+      </main>
+    </>
+  );
 };
 
 export default Signup;
