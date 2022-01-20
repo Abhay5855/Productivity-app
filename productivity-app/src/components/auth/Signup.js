@@ -4,7 +4,17 @@
 import React from 'react';
 
 const Signup = () => {
-  return <div></div>;
+  return(
+
+      <>
+
+         <main>
+
+
+
+         </main>
+      </>
+  )
 };
 
 export default Signup;

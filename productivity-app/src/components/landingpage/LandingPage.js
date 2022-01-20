@@ -1,16 +1,19 @@
 
 
-
-import React from 'react';
+import './landing.css'
 
 const LandingPage = () => {
   return  (
 
-    <div>
+   
 
-        <h2>Landing Page</h2>
+        <section>
 
-  </div>
+            <ul>
+
+            </ul>
+
+        </section>
 
   )
 };
